@@ -34,9 +34,8 @@ header {
 }
 
 header .logo img {
-  height: 100px;
-  width:100px;
-  border-radius: 10px;
+  height: 60px;
+  width:auto;
 }
 
 nav ul {
