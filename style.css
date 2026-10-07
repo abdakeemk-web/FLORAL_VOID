@@ -1,0 +1,440 @@
+/* ===========================
+   KEHINDE STUDIO - MAIN STYLES
+   Inspired by Oakley's Creations
+   =========================== */
+
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap');
+
+/* ========== RESET ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #fff;
+  color: #0a1a3a;
+  line-height: 1.6;
+}
+
+/* ========== HEADER ========== */
+header {
+  background-color: #0a1a3a;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 60px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+header .logo img {
+  height: 100px;
+  width:100px;
+  border-radius: 10px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+  color: #d4af37;
+}
+
+/* ========== HERO SECTION ========== */
+.hero {
+  position: relative;
+  height: 80vh;
+  overflow: hidden;
+  color: white;
+  text-align: center;
+}
+
+.slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.overlay {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+}
+
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 48px;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 18px;
+  color: #d4af37;
+}
+
+/* ========== GALLERY ========== */
+.gallery {
+  padding: 80px 60px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.gallery img {
+  width: 100%;
+  height: 280/px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 3px solid #eee;
+}
+
+/* ========== SERVICES ========== */
+.services {
+  padding: 80px 60px;
+  background: #f9f9f9;
+}
+
+.services h2 {
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 50px;
+  font-size: 36px;
+}
+
+.service-card {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 30px;
+  text-align: center;
+}
+
+.service-card h3 {
+  color: #0a1a3a;
+  margin-bottom: 10px;
+}
+
+.service-card p {
+  color: #555;
+  font-size: 15px;
+}
+
+/* ========== ABOUT ========== */
+.about {
+  padding: 80px 60px;
+}
+
+.about h2 {
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 30px;
+  font-size: 36px;
+}
+
+
+.about p {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+  color: #444;
+  font-size: 17px;
+}
+
+/* ========== CONTACT ========== */
+.contact {
+  padding: 80px 60px;
+  background: #f9f9f9;
+}
+
+.contact-info {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.contact-info p {
+  margin: 8px 0;
+}
+
+.contact form {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact input,
+.contact textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 15px;
+}
+
+.contact button {
+  background-color: #0a1a3a;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.contact button:hover {
+  background-color: #d4af37;
+  color: #0a1a3a;
+}
+
+/* ========== FOOTER ========== */
+footer {
+  background-color: #0a1a3a;
+  color: white;
+  text-align: center;
+  padding: 30px;
+  margin-top: 60px;
+}
+
+footer p {
+  font-size: 14px;
+}
+footer a img{
+  height: 50px;
+  width: 50px;
+
+}
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px 30px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    width: 100%;
+    margin-top: 15px;
+  }
+
+  .hero {
+    padding: 80px 20px;
+  }
+
+  .hero h1 {
+    font-size: 36px;
+  }
+
+  .gallery, .services, .about, .contact {
+    padding: 60px 20px;
+  }
+}
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.menu-toggle span {
+  width: 25px;
+  height: 3px;
+  background: white;
+  border-radius: 2px;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: flex;
+  }
+
+  nav ul {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: #0a1a3a;
+    margin-top: 15px;
+    padding: 10px 0;
+  }
+
+  nav ul.open {
+    display: flex;
+  }
+
+  nav ul li {
+    text-align: center;
+    padding: 10px 0;
+  }
+}
+/* ===== PRELOADER ===== */
+.loader {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  transition: opacity 0.8s ease;
+}
+.loader.fade-out { opacity: 0; }
+
+/* ===== REVEAL ANIMATIONS ===== */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== POPUP MESSAGE ===== */
+.popup-message {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  animation: fadeIn 0.5s ease;
+}
+.popup-box {
+  background: #fff;
+  padding: 2em;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+}
+.popup-box h3 {
+  margin-bottom: 10px;
+  color: #333;
+}
+.popup-box button {
+  background: #333;
+  color: #fff;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+.popup-box button:hover {
+  background: #555;
+}
+.popup-message.fade-out { opacity: 0; transition: opacity 0.5s ease; }
+
+@keyframes fadeIn {
+  from { opacity: 0; } to { opacity: 1; }
+}
+/*
+ * 1. Style the Main Container
+ * This sets up the two columns side-by-side.
+ */
+.about-section {
+    display: flex; /* Activate flexbox */
+    gap: 40px; /* Adds space between the columns */
+    padding: 60px 40px; /* Adds padding around the whole section */
+    max-width: 1200px; /* Optional: Constrains the width of the content */
+    margin: 0 auto; /* Centers the container */
+    background-color: white; /* Dark background matching the image */
+    color: #0a1a3a; /* Light text color */
+}
+.about-text p {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+/*
+ * 2. Style the Columns
+ * This determines how much space each column takes up.
+ */
+.about-text {
+    flex: 2; /* Gives this column 2 parts of the available space */
+    line-height: 1.8; /* Improves readability of the text */
+}
+
+.about-image-container {
+    flex: 1; /* Gives this column 1 part of the available space (half the width of the text) */
+    text-align: center; /* Centers the caption */
+}
+
+/*
+ * 3. Style the Image
+ * Ensures the image scales correctly within its container.
+ */
+.about-image-container img {
+    max-width: 100%; /* Makes sure the image doesn't overflow its container */
+    height: auto;
+    display: block; /* Removes any default bottom spacing from the image */
+}
+
+/*
+ * 4. Style the Heading and Caption
+ */
+.about-text h1 {
+    color: #0a1a3a; /* Or whatever green color you want */
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.caption {
+    font-size: 0.8em;
+    margin-top: 5px;
+    font-style: italic;
+    color: #999;
+}
+
+/*
+ * 5. Make it Responsive (Optional but crucial!)
+ * When the screen is small (like a phone), switch to a single column.
+ */
+@media (max-width: 768px) {
+    .about-section {
+        flex-direction: column; /* Stacks the columns vertically */
+        padding: 30px 20px; /* Adjust padding for small screens */
+    }
+}
