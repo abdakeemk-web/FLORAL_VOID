@@ -1,0 +1,34 @@
+import fs from 'node:fs';import path from 'node:path';
+import { renderFilters, renderTiles } from './gallery.mjs';
+import { renderServiceOptions } from './contact-form.mjs';
+const R=path.resolve(import.meta.dirname,'..'),D=path.join(R,'dist');
+const cfg=JSON.parse(fs.readFileSync(path.join(R,'data/site.config.json'),'utf8'));
+const rd=p=>fs.readFileSync(path.join(R,p),'utf8');
+const esc=s=>s.replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;');
+fs.rmSync(D,{recursive:true,force:true});fs.mkdirSync(path.join(D,'css'),{recursive:true});fs.mkdirSync(path.join(D,'js'),{recursive:true});
+fs.writeFileSync(path.join(D,'css/site.css'),rd('src/design-system.css')+'\n'+rd('src/site.css'));
+fs.cpSync(path.join(R,'src/js'),path.join(D,'js'),{recursive:true});
+const galleryItems=JSON.parse(rd('data/gallery.json'));
+if(fs.existsSync(path.join(R,'public')))fs.cpSync(path.join(R,'public'),D,{recursive:true});
+const nav=(key,cls)=>cfg.nav.map(n=>`<a href="${n.href}"${n.key===key?' aria-current="page"':''}>${n.label}</a>`).join('');
+const social=cfg.socials.map(s=>`<div class="handle"><h3>${s.label}</h3><p class="user">${esc(s.user)}</p><div class="actions"><button class="btn btn-gold btn-sm" type="button" data-copy="${esc(s.user)}" aria-label="Copy ${s.label} username ${esc(s.user)}">Copy username</button><a class="btn btn-ghost btn-sm" href="${s.url}" target="_blank" rel="noopener noreferrer">${s.open}</a></div><p class="toast" role="status" aria-live="polite"></p></div>`).join('');
+const fill=(t,v)=>t.replace(/{{(\w+)}}/g,(_,k)=>v[k]??'');
+const urls=[];
+for(const f of fs.readdirSync(path.join(R,'src/pages'))){
+  const key=f.replace('.html','');let src=rd('src/pages/'+f);
+  const m=src.match(/^<!--meta ([\s\S]*?) -->\n/);const meta=JSON.parse(m[1]);const socialBlock=fill(rd('src/partials/social.html'),{socialItems:social});
+  const body=fill(src.slice(m[0].length),{social:socialBlock,galleryFilters:renderFilters(galleryItems),galleryTiles:renderTiles(galleryItems),serviceOptions:renderServiceOptions(cfg.services),web3formsKey:esc(cfg.forms.accessKey)});
+  const route=key==='index'?'/':'/'+key;const canonical=cfg.domain+(key==='index'?'/':route);
+  const vars={title:esc(meta.title),description:esc(meta.description),canonical};
+  let head=fill(rd('src/partials/head.html'),vars)+(meta.noindex?'<meta name="robots" content="noindex">':'');
+  for(const data of meta.jsonLd||[])head+=`<script type="application/ld+json">${JSON.stringify(data)}</script>`;
+  if(key==='index')head+=`<script type="application/ld+json">${JSON.stringify({"@context":"https://schema.org","@type":"Organization",name:"FLORAL VOID",url:cfg.domain+'/',sameAs:cfg.socials.map(s=>s.url)})}</script>`;
+  const header=fill(rd('src/partials/header.html'),{navLinks:nav(key),navLinksMobile:nav(key)});
+  const footer=fill(rd('src/partials/footer.html'),{navLinks:nav(key),social:socialBlock,emailUser:cfg.email.user,emailDomain:cfg.email.domain});
+  const html=`<!doctype html>\n<html lang="en"><head>${head}</head><body>${header}${body}${footer}</body></html>\n`;
+  fs.writeFileSync(path.join(D,f),html);
+  if(!meta.noindex)urls.push(canonical);
+}
+fs.writeFileSync(path.join(D,'sitemap.xml'),`<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map(u=>`<url><loc>${u}</loc></url>`).join('\n')}\n</urlset>\n`);
+fs.writeFileSync(path.join(D,'robots.txt'),`User-agent: *\nAllow: /\n\nSitemap: ${cfg.domain}/sitemap.xml\n`);
+console.log('Built',urls.length,'indexable pages + 404');
