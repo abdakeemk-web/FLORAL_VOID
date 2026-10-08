@@ -1,0 +1,120 @@
+<!--meta {"title": "Request a Commission | Fursuits, Fursonas, VRChat and VTuber Avatars | FLORAL VOID", "description": "Send a commission application to FLORAL VOID for a custom fursuit, fursona design, VRChat avatar, VTuber avatar or a custom request."} -->
+<main id="main">
+
+  <section class="hero">
+    <div class="hero-inner hero-simple">
+      <p class="eyebrow">Contact</p>
+      <h1 class="h1">Request a Commission</h1>
+      <p class="lead">Tell me about the character or project you have in mind. Fursuits, fursona design, VRChat avatars, VTuber avatars and custom requests are all open.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-inner contact-layout">
+
+      <div class="form-card">
+        <form id="commission-form" class="commission-form" novalidate>
+          <input type="hidden" name="access_key" value="{{web3formsKey}}">
+          <p class="small form-intro">Fields marked <strong>Required</strong> must be filled in. I'll review your application and get back to you.</p>
+
+          <div class="form-status" role="status" aria-live="polite" tabindex="-1"></div>
+
+          <fieldset class="form-group">
+            <legend>About you</legend>
+            <div class="field">
+              <label for="name">Name <span class="req">Required</span></label>
+              <input id="name" name="name" class="input" type="text" autocomplete="name" maxlength="100" required aria-describedby="name-error">
+              <span id="name-error" class="err" hidden></span>
+            </div>
+            <div class="field">
+              <label for="email">Email <span class="req">Required</span></label>
+              <input id="email" name="email" class="input" type="email" autocomplete="email" inputmode="email" maxlength="254" required aria-describedby="email-error">
+              <span id="email-error" class="err" hidden></span>
+            </div>
+            <div class="field">
+              <label for="discord">Discord username <span class="opt">Optional</span></label>
+              <input id="discord" name="discord" class="input" type="text" autocomplete="off" autocapitalize="none" maxlength="64" aria-describedby="discord-hint discord-error">
+              <span id="discord-hint" class="small">Helpful if you'd like to talk there.</span>
+              <span id="discord-error" class="err" hidden></span>
+            </div>
+          </fieldset>
+
+          <fieldset class="form-group">
+            <legend>Your commission</legend>
+            <div class="field">
+              <label for="service">Service <span class="req">Required</span></label>
+              <select id="service" name="service" class="input" required aria-describedby="service-note service-error">
+                {{serviceOptions}}
+              </select>
+              <span id="service-note" class="small">Fursona Design, VRChat Avatar and VTuber Avatar are all available and priced by quote.</span>
+              <span id="service-error" class="err" hidden></span>
+            </div>
+            <div class="field">
+              <label for="budget">Budget <span class="opt">Optional</span></label>
+              <input id="budget" name="budget" class="input" type="text" maxlength="100" aria-describedby="budget-hint budget-error">
+              <span id="budget-hint" class="small">A rough amount or range helps me quote you accurately.</span>
+              <span id="budget-error" class="err" hidden></span>
+            </div>
+            <div class="field">
+              <label for="description">Project description <span class="req">Required</span></label>
+              <textarea id="description" name="description" class="input" rows="6" maxlength="3000" required aria-describedby="description-hint description-error"></textarea>
+              <span id="description-hint" class="small">What would you like made? Include the type of build, features and anything important.</span>
+              <span id="description-error" class="err" hidden></span>
+            </div>
+          </fieldset>
+
+          <fieldset class="form-group">
+            <legend>More detail</legend>
+            <div class="field">
+              <label for="character">Character / fursona information <span class="opt">Optional</span></label>
+              <textarea id="character" name="character" class="input" rows="4" maxlength="2000" aria-describedby="character-error"></textarea>
+              <span id="character-error" class="err" hidden></span>
+            </div>
+            <div class="field">
+              <label for="references">Reference links <span class="opt">Optional</span></label>
+              <textarea id="references" name="references" class="input" rows="3" maxlength="2000" aria-describedby="references-hint references-error"></textarea>
+              <span id="references-hint" class="small">Paste links to reference sheets or images, one per line.</span>
+              <span id="references-error" class="err" hidden></span>
+            </div>
+            <div class="field">
+              <label for="notes">Additional notes <span class="opt">Optional</span></label>
+              <textarea id="notes" name="notes" class="input" rows="3" maxlength="2000" aria-describedby="notes-error"></textarea>
+              <span id="notes-error" class="err" hidden></span>
+            </div>
+          </fieldset>
+
+          <div class="hp" aria-hidden="true">
+            <label for="botcheck">Leave this field empty</label>
+            <input id="botcheck" name="botcheck" type="text" tabindex="-1" autocomplete="off">
+          </div>
+
+          <div class="field agree">
+            <label class="agree-label" for="termsAccepted">
+              <input id="termsAccepted" name="termsAccepted" type="checkbox" required aria-describedby="termsAccepted-error">
+              <span>I have read and accept the <a href="/terms" target="_blank" rel="noopener">Terms of Service</a>. <span class="req">Required</span></span>
+            </label>
+            <span id="termsAccepted-error" class="err" hidden></span>
+          </div>
+
+          <button class="btn btn-gold submit" type="submit"><span class="submit-label">Submit application</span></button>
+        </form>
+
+        <div class="form-success" hidden tabindex="-1">
+          <h2 class="h2">Application submitted</h2>
+          <p class="success-message"></p>
+          <button class="btn btn-ghost" type="button" data-new-application>Send another application</button>
+        </div>
+      </div>
+
+      <aside class="contact-aside" aria-labelledby="direct-heading">
+        <h2 id="direct-heading" class="h3">Prefer to message directly?</h2>
+        <p>You can also reach me on any of these.</p>
+        {{social}}
+        <p class="small">Please read the <a href="/pricing">pricing</a> and <a href="/terms">terms</a> before you commission.</p>
+      </aside>
+
+    </div>
+  </section>
+
+  <script defer src="/js/contact.js"></script>
+</main>

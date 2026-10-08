@@ -1,0 +1,12 @@
+{
+  "outputDirectory": "dist",
+  "buildCommand": "node scripts/build.mjs",
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    {"source": "/gallary.html", "destination": "/gallery", "permanent": true},
+    {"source": "/gallary", "destination": "/gallery", "permanent": true},
+    {"source": "/term.html", "destination": "/terms", "permanent": true},
+    {"source": "/term", "destination": "/terms", "permanent": true}
+  ]
+}

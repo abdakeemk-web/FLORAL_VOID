@@ -1,0 +1,114 @@
+{
+  "siteName": "FLORAL VOID",
+  "domain": "https://floral-void.vercel.app",
+  "domainNote": "[CANONICAL_DOMAIN] placeholder: using floral-void.vercel.app until a custom domain exists",
+  "socials": [
+    {
+      "id": "discord",
+      "label": "Discord",
+      "user": "eloradebby",
+      "url": "https://discord.com/users/1251198237864362167",
+      "open": "Open Discord"
+    },
+    {
+      "id": "tiktok",
+      "label": "TikTok",
+      "user": "@nadafunk",
+      "url": "https://www.tiktok.com/@nadafunk",
+      "open": "Open TikTok"
+    },
+    {
+      "id": "telegram",
+      "label": "Telegram",
+      "user": "Eloradebby1234",
+      "url": "http://t.me/Eloradebby1234",
+      "open": "Open Telegram"
+    }
+  ],
+  "email": {
+    "user": "abdakeemkehinde",
+    "domain": "gmail.com"
+  },
+  "forms": {
+    "provider": "web3forms",
+    "accessKey": "9b614080-f21b-4cfc-9460-5b7cd8140665",
+    "recipient": "abdakeemkehinde@gmail.com",
+    "recipientNote": "Create the Web3Forms access key while signed in with this Gmail address, then paste the key into accessKey above."
+  },
+  "nav": [
+    {
+      "href": "/",
+      "label": "Home",
+      "key": "index"
+    },
+    {
+      "href": "/gallery",
+      "label": "Gallery",
+      "key": "gallery"
+    },
+    {
+      "href": "/services",
+      "label": "Services",
+      "key": "services"
+    },
+    {
+      "href": "/pricing",
+      "label": "Pricing",
+      "key": "pricing"
+    },
+    {
+      "href": "/contact",
+      "label": "Contact",
+      "key": "contact"
+    },
+    {
+      "href": "/terms",
+      "label": "Terms",
+      "key": "terms"
+    }
+  ],
+  "services": [
+    {
+      "value": "fursuit-head",
+      "label": "Fursuit — Head Only",
+      "price": "$1,500+"
+    },
+    {
+      "value": "fursuit-mini-partial",
+      "label": "Fursuit — Mini Partial",
+      "price": "$2,700+"
+    },
+    {
+      "value": "fursuit-partial",
+      "label": "Fursuit — Partial",
+      "price": "$5,000+"
+    },
+    {
+      "value": "fursuit-full",
+      "label": "Fursuit — Full Suit",
+      "price": "$7,000+",
+      "priceConfirmed": false,
+      "priceNote": "Provisional starting price. Change it here when the client confirms the final price."
+    },
+    {
+      "value": "fursona-design",
+      "label": "Fursona Design",
+      "price": "Request a Quote"
+    },
+    {
+      "value": "vrchat-avatar",
+      "label": "VRChat Avatar",
+      "price": "Request a Quote"
+    },
+    {
+      "value": "vtuber-avatar",
+      "label": "VTuber Avatar",
+      "price": "Request a Quote"
+    },
+    {
+      "value": "other",
+      "label": "Other / Custom Request",
+      "price": "Request a Quote"
+    }
+  ]
+}
