@@ -17,7 +17,7 @@ const fill=(t,v)=>t.replace(/{{(\w+)}}/g,(_,k)=>v[k]??'');
 const urls=[];
 for(const f of fs.readdirSync(path.join(R,'src/pages'))){
   const key=f.replace('.html','');let src=rd('src/pages/'+f);
-  const m=src.match(/^<!--meta ([\s\S]*?) -->\n/);const meta=JSON.parse(m[1]);const socialBlock=fill(rd('src/partials/social.html'),{socialItems:social});
+  const m=src.match(/^<!--meta ([\s\S]*?) -->\r?\n/);const meta=JSON.parse(m[1]);const socialBlock=fill(rd('src/partials/social.html'),{socialItems:social});
   const body=fill(src.slice(m[0].length),{social:socialBlock,galleryFilters:renderFilters(galleryItems),galleryTiles:renderTiles(galleryItems),serviceOptions:renderServiceOptions(cfg.services),web3formsKey:esc(cfg.forms.accessKey)});
   const route=key==='index'?'/':'/'+key;const canonical=cfg.domain+(key==='index'?'/':route);
   const vars={title:esc(meta.title),description:esc(meta.description),canonical,ogImage:cfg.domain+'/og-image.jpg'};
