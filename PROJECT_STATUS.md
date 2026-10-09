@@ -25,8 +25,8 @@ Premium creative-commission website for **FLORAL VOID** (artist: Kehinde; fursui
 | 6 | Services | **Delivered** (user asked to continue; treat as approved unless changes requested) |
 | 7 | Pricing | **Approved** (user, Oct 8 2026) |
 | 8 | Contact / commission form + Web3Forms email | **Updated — awaiting user approval + access key** (Resend removed; form posts directly to Web3Forms; recipient abdakeemkehinde@gmail.com; Full Suit $7,000+ provisional; Furry gallery filter added) |
-| 9 | Terms | Pending |
-| 10 | Performance / SEO / accessibility audit | Pending |
+| 9 | Terms | **Approved** (user, Oct 9 2026 — "well and good"; client to read it over) |
+| 10 | Performance / SEO / accessibility audit | **Delivered — awaiting user approval** (og share image added, fonts self-hosted, all contrast/label/heading checks pass) |
 | 11 | Final QA | Pending |
 
 Reality check (user, Oct 7 2026): nothing had ever been delivered or pushed to GitHub before Stage 3. Stage 3 is the first real code.
@@ -50,7 +50,7 @@ Reality check (user, Oct 7 2026): nothing had ever been delivered or pushed to G
 - Per-service Discord/TikTok links: default to the shared links above unless the client supplies different ones
 - Pricing for Fursona / VRChat / VTuber (undecided whether to display)
 - Gallery categories + titles (suggested only, not approved)
-- WIP images (none identified in the 50 existing images)
+- WIP images: 12 photos added Oct 9 2026 (foam bases, feet paws, clay sculpt, fit tests; originals in source-images/work-in-progress/). 2 exact duplicates deleted. 1 MP4 video parked (gallery is photo-only; needs a small player upgrade).
 
 ## 6. Brand / design (carry-over; formal system comes in Stage 2)
 - Primary navy `#0A1A3A`, accent gold `#D4AF37`, plus neutral white/off-white/gray/black.
@@ -137,6 +137,21 @@ Flags: 1.jpg is 299x252 (too small); 2, 12, 22 are wide strips; 6,10,25,29,33,39
 - Titles/captions: none invented; the photo's alt text is shown as its caption.
 
 - Stage 5 decisions (user): gallery approved as built. Keep 6, 10, 25, 29, 33, 39 and 1.jpg excluded until client confirms permission. Work in Progress stays at 0 with its placeholder until the client names the photos. Original JPGs stay in source-images/. Viewer behaviour stays thumbnail first, full-size only when a photo is opened.
+- WIP follow-up (Oct 9 2026): user supplied 14 photos + 1 video in public/work-in-progress/. 2 were exact byte-duplicates (deleted: 12.11.20 PM (3) and (4)); the other 12 published as gallery items wip-01…wip-12 (category wip, all tagged "In progress" with a tile badge + viewer caption prefix). Originals moved to source-images/work-in-progress/ (not deployed); WebP 480/1000 outputs in public/images/portfolio/. The `[WIP_PHOTOS_TO_BE_PROVIDED]` empty message is now generic ("No photos in this category yet") since Furry is still at 0. Two WIP photos show a person (wip-06 fit test with eyes visible through the base; wip-07 lower-body try-on, no face) — user supplied them, so published; remove on request. Video parked: gallery renderer/viewer is photo-only.
+- WIP video player (Oct 9 2026): MP4 published as gallery item wip-video-01
+  (400x720 portrait, 2.6 MB in public/videos/). Tile shows first frame
+  (preload metadata only) with play overlay + "In progress" badge;   viewer dialog
+  now swaps between photo and video, pauses on close/navigation. Status line says
+  "items" instead of "photos". Checked Oct 9 2026: the MP4 contains a real audio
+  track (655 samples), and the viewer plays it unmuted with controls — sound starts
+  when the visitor presses play (browsers block autoplay with sound). The tile
+  preview itself is silent by design. Video alt text confirmed.
+- Video sound (Oct 9 2026, user picked #3): mixed Kevin MacLeod “As I Figure”
+  (mellow guitar, CC BY 3.0) into public/videos/wip-video-01.mp4 — first 15.2s,
+  0.5s fade-in, 2s fade-out, AAC 128k; picture stream copied untouched (+237 KB).
+  Silent original kept in source-images/work-in-progress/. Credit line renders in
+  the viewer caption via the item's credit field. Other previews were
+  Meditation Impromptu 01/02 (rejected). User approved Oct 9 2026 ("perfect").
 - Stage 6 (Oct 7 2026): Services page built. H1 "Services" (old "photography" claim removed), jump links, four sections with anchors (#fursuit-making, #fursona-design, #vrchat-avatar-creation, #vtuber-avatar-creation). Copy is the original service text with typos fixed. Fursuit section lists Head Only from $1,500, Mini Partial from $2,700, Partial from $5,000, Full Suit [FULL_SUIT_PRICE_TO_BE_PROVIDED], plus the original estimate/deposit note, and links to /pricing. Other three show "Request a Quote". Each CTA links to /contact?service=<value> (values match data/site.config.json; the Stage 8 form must read this parameter and preselect the service; "other" is used by the custom-request link). Service JSON-LD for all four services (build supports meta.jsonLd). Closing band with Discord/TikTok/Telegram and a link to Terms.
 - Bug fixes this stage: outline buttons on navy sections (homepage hero and contact band) were navy on navy and invisible; now white with gold border. Build script now accepts multi-line page meta.
 - Tested: no horizontal overflow at 320, 360, 375, 390, 414, 768, 1024, 1280, 1440, 1920px; one 320px overflow (long price placeholder) found and fixed. Only inline text links in paragraphs are under 44px tall.
@@ -178,13 +193,43 @@ Flags: 1.jpg is 299x252 (too small); 2, 12, 22 are wide strips; 6,10,25,29,33,39
     (head, handpaws, feetpaws, full zippered bodysuit, tail); Partial Suit no longer
     claims a full bodysuit; Fursona / VRChat / VTuber stay "Request a Quote"; VRChat
     section links https://www.tiktok.com/@kehindestudio__1; gallery gains a Furry filter
-    (0 items until the client supplies media; WIP photos/video still awaited).
+    (0 items until the client supplies media; WIP now has 12 photos, video still parked).
   - Recipient: abdakeemkehinde@gmail.com (the Web3Forms account/key must belong to this
     address; abdakeemk@gmail.com is NOT used). No file-upload input added: attachments
     are a paid Web3Forms feature, so reference links stay the primary method on free.
 
+- Stage 10 (Oct 9 2026): audit completed, 2 fixes shipped.
+  - Measured: dist 11.7 MB total, but initial page loads stay light — the heavy
+    files (2.6 MB video, 100–235 KB full-size viewer images) only download on
+    demand; gallery thumbs lazy-load; HTML pages 8–32 KB.
+  - Contrast: all 12 text/background pairs pass WCAG AA (lowest: gold-ink on
+    ivory 4.53). Labels/names: every field, button and link has an accessible
+    name (gallery tile buttons named by their photo alt). One h1 per page,
+    no missing alt, empty alts only where legitimate (lightbox JS placeholder,
+    aria-hidden hero slides).
+  - Fix 1 (SEO): share image added — public/og-image.jpg (1200x630, 77 KB:
+    portfolio photo + gold FLORAL VOID + tagline on navy). og:image on all
+    pages, twitter card upgraded to summary_large_image.
+  - Fix 2 (performance): Google Fonts removed — 5 latin woff2 files (~98 KB)
+    self-hosted in public/fonts/ with display=swap. Zero third-party requests
+    site-wide now.
+  - Left for owner after deploy: Search Console submission. No ranking
+    guarantees, per workflow rules.
+
 ## 13. Next recommended action
-Owner creates the Web3Forms account with abdakeemkehinde@gmail.com, pastes the access key
-into data/site.config.json (forms.accessKey), rebuilds, redeploys, submits a real test
-application, then approves Stage 8. Next: Stage 9 (Terms, preserving the 7 existing sections
-with accessible accordions).
+Owner reviews the Terms page, then approves Stage 9. Next: gallery WIP/Furry details
+when the client supplies media (Stage 5 follow-up), then Stage 10 (Performance / SEO /
+accessibility audit).
+
+- Stage 9 (Oct 9 2026): Terms page built from the ORIGINAL term.html recovered from the
+  repo's first commit (68b6f2c) — all 7 sections preserved in meaning and wording
+  (typos fixed; literal `*asterisks*` from unrendered markdown now render as
+  emphasis/strong; no clause added, removed or softened). Native `<details>`
+  accordions (no JS, keyboard accessible, section 1 open by default), numbered badges,
+  closing "Ask before you commission" band linking to /contact. Tested via build +
+  npm test 11/11; visual check at all widths still needed on user approval.
+- Terms age-clause change (Oct 9 2026, user-requested): first removed the under-18
+  parental-consent sentence, then removed the 18+ requirement entirely from
+  section 1. The page now has NO age condition — anyone of any age may commission.
+  This differs from the original site; confirm with the client. User confirmed
+  Oct 9 2026 ("yes") — no age limit stands.

@@ -11,11 +11,11 @@
       "open": "Open Discord"
     },
     {
-      "id": "tiktok",
-      "label": "TikTok",
-      "user": "@nadafunk",
-      "url": "https://www.tiktok.com/@nadafunk",
-      "open": "Open TikTok"
+      "id": "email",
+      "label": "Email",
+      "user": "Hidden until tapped",
+      "url": "",
+      "open": "Show email"
     },
     {
       "id": "telegram",

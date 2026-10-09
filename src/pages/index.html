@@ -1,23 +1,46 @@
 <!--meta {"title": "FLORAL VOID | Custom Fursuits, Fursona Design and Avatars", "description": "FLORAL VOID is a Northeast Ohio fursuit maker creating custom fursuits, fursona designs, VRChat avatars and VTuber avatars."} -->
 <main id="main">
 
-  <section class="hero">
-    <div class="hero-inner">
-      <div class="hero-copy">
-        <p class="eyebrow">FLORAL VOID</p>
-        <h1 class="h1">Custom fursuits and character design</h1>
-        <p class="lead">Bringing your creative vision to life, from fursuits to fursonas to VRChat and VTuber avatars.</p>
-        <div class="row">
-          <a class="btn btn-gold" href="/contact">Request a commission</a>
-          <a class="btn btn-ghost" href="/gallery">View the gallery</a>
-        </div>
-      </div>
-      <img class="hero-image"
+  <section class="hero hero-slideshow">
+    <div class="hero-slides" aria-hidden="true">
+      <img class="hero-slide is-active"
            src="/images/portfolio/portfolio-21-1000.webp"
            srcset="/images/portfolio/portfolio-21-480.webp 480w, /images/portfolio/portfolio-21-1000.webp 857w"
-           sizes="(min-width: 900px) 420px, 90vw"
-           width="857" height="889" fetchpriority="high"
-           alt="Fursuit head with navy and white fur, large pointed ears and green eyes on a blue background">
+           sizes="100vw"
+           width="857" height="889" fetchpriority="high" decoding="async"
+           alt="">
+      <img class="hero-slide" data-src="/images/portfolio/portfolio-2-1000.webp"
+           data-srcset="/images/portfolio/portfolio-2-480.webp 480w, /images/portfolio/portfolio-2-1000.webp 1000w"
+           sizes="100vw"
+           width="1000" height="412" loading="lazy" decoding="async"
+           alt="">
+      <img class="hero-slide" data-src="/images/portfolio/portfolio-12-1000.webp"
+           data-srcset="/images/portfolio/portfolio-12-480.webp 480w, /images/portfolio/portfolio-12-1000.webp 1000w"
+           sizes="100vw"
+           width="1000" height="411" loading="lazy" decoding="async"
+           alt="">
+      <img class="hero-slide" data-src="/images/portfolio/portfolio-16-1000.webp"
+           data-srcset="/images/portfolio/portfolio-16-480.webp 480w, /images/portfolio/portfolio-16-1000.webp 1000w"
+           sizes="100vw"
+           width="997" height="619" loading="lazy" decoding="async"
+           alt="">
+    </div>
+    <div class="hero-shade" aria-hidden="true"></div>
+    <div class="hero-inner hero-content">
+      <div class="hero-copy">
+        <p class="eyebrow eyebrow-welcome">Welcome to</p>
+        <h1 class="hero-title"><span class="hero-brand">FLORAL VOID</span><span class="hero-sub js-typed">Custom fursuits and character design</span></h1>
+        <p class="lead">Bringing Your Creative Vision to Life.</p>
+        <div class="row">
+          <a class="btn btn-gold btn-sm" href="/contact">Request a commission</a>
+        </div>
+      </div>
+    </div>
+    <div class="hero-dots" role="group" aria-label="Choose hero image">
+      <button type="button" class="hero-dot is-active" aria-label="Show image 1" aria-pressed="true"></button>
+      <button type="button" class="hero-dot" aria-label="Show image 2" aria-pressed="false"></button>
+      <button type="button" class="hero-dot" aria-label="Show image 3" aria-pressed="false"></button>
+      <button type="button" class="hero-dot" aria-label="Show image 4" aria-pressed="false"></button>
     </div>
   </section>
 

@@ -11,7 +11,8 @@ fs.cpSync(path.join(R,'src/js'),path.join(D,'js'),{recursive:true});
 const galleryItems=JSON.parse(rd('data/gallery.json'));
 if(fs.existsSync(path.join(R,'public')))fs.cpSync(path.join(R,'public'),D,{recursive:true});
 const nav=(key,cls)=>cfg.nav.map(n=>`<a href="${n.href}"${n.key===key?' aria-current="page"':''}>${n.label}</a>`).join('');
-const social=cfg.socials.map(s=>`<div class="handle"><h3>${s.label}</h3><p class="user">${esc(s.user)}</p><div class="actions"><button class="btn btn-gold btn-sm" type="button" data-copy="${esc(s.user)}" aria-label="Copy ${s.label} username ${esc(s.user)}">Copy username</button><a class="btn btn-ghost btn-sm" href="${s.url}" target="_blank" rel="noopener noreferrer">${s.open}</a></div><p class="toast" role="status" aria-live="polite"></p></div>`).join('');
+const social=cfg.socials.map(s=>s.id==='email'?`<div class="handle"><h3>${s.label}</h3><p class="user">${esc(s.user)}</p><div class="actions"><button class="btn btn-gold btn-sm" type="button" data-email-user="${cfg.email.user}" data-email-domain="${cfg.email.domain}">${s.open}</button><span class="mail-out" role="status" aria-live="polite"></span></div><p class="toast" role="status" aria-live="polite"></p></div>`:`<div class="handle"><h3>${s.label}</h3><p class="user">${esc(s.user)}</p><div class="actions"><button class="btn btn-gold btn-sm" type="button" data-copy="${esc(s.user)}" aria-label="Copy ${s.label} username ${esc(s.user)}">Copy username</button><a class="btn btn-ghost btn-sm" href="${s.url}" target="_blank" rel="noopener noreferrer">${s.open}</a></div><p class="toast" role="status" aria-live="polite"></p></div>`).join('');
+const footSocial=cfg.socials.filter(s=>s.id!=='tiktok'&&s.id!=='coming-soon'&&s.id!=='email').map(s=>`<li><a href="${s.url}" target="_blank" rel="noopener noreferrer">${s.label}: ${esc(s.user)}</a></li>`).join('');
 const fill=(t,v)=>t.replace(/{{(\w+)}}/g,(_,k)=>v[k]??'');
 const urls=[];
 for(const f of fs.readdirSync(path.join(R,'src/pages'))){
@@ -19,12 +20,13 @@ for(const f of fs.readdirSync(path.join(R,'src/pages'))){
   const m=src.match(/^<!--meta ([\s\S]*?) -->\n/);const meta=JSON.parse(m[1]);const socialBlock=fill(rd('src/partials/social.html'),{socialItems:social});
   const body=fill(src.slice(m[0].length),{social:socialBlock,galleryFilters:renderFilters(galleryItems),galleryTiles:renderTiles(galleryItems),serviceOptions:renderServiceOptions(cfg.services),web3formsKey:esc(cfg.forms.accessKey)});
   const route=key==='index'?'/':'/'+key;const canonical=cfg.domain+(key==='index'?'/':route);
-  const vars={title:esc(meta.title),description:esc(meta.description),canonical};
+  const vars={title:esc(meta.title),description:esc(meta.description),canonical,ogImage:cfg.domain+'/og-image.jpg'};
   let head=fill(rd('src/partials/head.html'),vars)+(meta.noindex?'<meta name="robots" content="noindex">':'');
   for(const data of meta.jsonLd||[])head+=`<script type="application/ld+json">${JSON.stringify(data)}</script>`;
-  if(key==='index')head+=`<script type="application/ld+json">${JSON.stringify({"@context":"https://schema.org","@type":"Organization",name:"FLORAL VOID",url:cfg.domain+'/',sameAs:cfg.socials.map(s=>s.url)})}</script>`;
+  if(key==='index')head+=`<script type="application/ld+json">${JSON.stringify({"@context":"https://schema.org","@type":"Organization",name:"FLORAL VOID",url:cfg.domain+'/',sameAs:cfg.socials.map(s=>s.url).filter(u=>/^https?:\/\//.test(u))})}</script>`;
+  if(key==='index')head+=`<link rel="preload" as="image" href="/images/portfolio/portfolio-21-1000.webp" imagesrcset="/images/portfolio/portfolio-21-480.webp 480w, /images/portfolio/portfolio-21-1000.webp 857w" imagesizes="100vw" fetchpriority="high">`;
   const header=fill(rd('src/partials/header.html'),{navLinks:nav(key),navLinksMobile:nav(key)});
-  const footer=fill(rd('src/partials/footer.html'),{navLinks:nav(key),social:socialBlock,emailUser:cfg.email.user,emailDomain:cfg.email.domain});
+  const footer=fill(rd('src/partials/footer.html'),{navLinks:nav(key),social:socialBlock,footSocial,emailUser:cfg.email.user,emailDomain:cfg.email.domain});
   const html=`<!doctype html>\n<html lang="en"><head>${head}</head><body>${header}${body}${footer}</body></html>\n`;
   fs.writeFileSync(path.join(D,f),html);
   if(!meta.noindex)urls.push(canonical);

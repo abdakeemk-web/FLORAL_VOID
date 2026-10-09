@@ -7,7 +7,7 @@
 
     <div class="filters" role="group" aria-label="Filter the gallery by type">{{galleryFilters}}</div>
     <p class="gallery-status" role="status" aria-live="polite"></p>
-    <p class="gallery-empty" hidden>[WIP_PHOTOS_TO_BE_PROVIDED] Work in progress photos will appear here.</p>
+    <p class="gallery-empty" hidden>No photos in this category yet — check back soon.</p>
 
     <ul class="gallery-grid">
 {{galleryTiles}}
@@ -16,14 +16,15 @@
     <p class="more">Like what you see? <a class="btn btn-gold" href="/contact">Request a commission</a></p>
   </section>
 
-  <dialog class="lightbox" aria-label="Enlarged photo">
-    <button class="lightbox-close" type="button" aria-label="Close photo">&times;</button>
-    <button class="lightbox-nav lightbox-prev" type="button" aria-label="Previous photo">&#8249;</button>
+  <dialog class="lightbox" aria-label="Enlarged photo or video">
+    <button class="lightbox-close" type="button" aria-label="Close viewer">&times;</button>
+    <button class="lightbox-nav lightbox-prev" type="button" aria-label="Previous item">&#8249;</button>
     <figure class="lightbox-figure">
       <img class="lightbox-image" alt="">
+      <video class="lightbox-video" controls playsinline preload="none" hidden></video>
       <figcaption class="lightbox-caption"></figcaption>
     </figure>
-    <button class="lightbox-nav lightbox-next" type="button" aria-label="Next photo">&#8250;</button>
+    <button class="lightbox-nav lightbox-next" type="button" aria-label="Next item">&#8250;</button>
   </dialog>
   <script defer src="/js/gallery.js"></script>
 </main>

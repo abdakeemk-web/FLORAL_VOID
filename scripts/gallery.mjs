@@ -25,12 +25,27 @@ export function renderTiles(items) {
   return items
     .filter((item) => !item.hidden)
     .map((item) => {
+      if (item.type === 'video') return renderVideoTile(item);
       const base = `/images/portfolio/portfolio-${item.id}`;
       const alt = escapeAttr(item.alt);
+      const tag = item.status ? `<span class="tile-tag">${escapeAttr(item.status)}</span>` : '';
+      const statusAttr = item.status ? ` data-status="${escapeAttr(item.status)}"` : '';
       return `<li class="tile" data-category="${item.category}">` +
-        `<button class="tile-button" type="button" data-full="${base}-1000.webp" data-width="${item.fullWidth}" data-height="${item.fullHeight}" data-alt="${alt}">` +
-        `<img src="${base}-480.webp" width="${item.thumbWidth}" height="${item.thumbHeight}" loading="lazy" decoding="async" alt="${alt}">` +
+        `<button class="tile-button" type="button" data-full="${base}-1000.webp" data-width="${item.fullWidth}" data-height="${item.fullHeight}" data-alt="${alt}"${statusAttr}>` +
+        `<img src="${base}-480.webp" width="${item.thumbWidth}" height="${item.thumbHeight}" loading="lazy" decoding="async" alt="${alt}">${tag}` +
         `</button></li>`;
     })
     .join('\n');
+}
+
+function renderVideoTile(item) {
+  const alt = escapeAttr(item.alt);
+  const tag = item.status ? `<span class="tile-tag">${escapeAttr(item.status)}</span>` : '';
+  const statusAttr = item.status ? ` data-status="${escapeAttr(item.status)}"` : '';
+  const creditAttr = item.credit ? ` data-credit="${escapeAttr(item.credit)}"` : '';
+  return `<li class="tile" data-category="${item.category}">` +
+    `<button class="tile-button tile-video-button" type="button" data-video="${item.video}" data-alt="${alt}"${statusAttr}${creditAttr}>` +
+    `<video src="${item.video}" width="${item.width}" height="${item.height}" preload="metadata" muted playsinline aria-hidden="true" tabindex="-1"></video>${tag}` +
+    `<span class="tile-play" aria-hidden="true"></span><span class="vh">Play video: ${alt}</span>` +
+    `</button></li>`;
 }

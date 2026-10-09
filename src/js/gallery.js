@@ -6,6 +6,7 @@
   var emptyMessage = document.querySelector('.gallery-empty');
   var dialog = document.querySelector('.lightbox');
   var image = dialog.querySelector('.lightbox-image');
+  var video = dialog.querySelector('.lightbox-video');
   var caption = dialog.querySelector('.lightbox-caption');
   var current = -1;
   var opener = null;
@@ -23,18 +24,32 @@
     });
     var count = visibleTiles().length;
     emptyMessage.hidden = count > 0;
-    status.textContent = count > 0 ? 'Showing ' + count + ' photos' : '';
+    status.textContent = count > 0 ? 'Showing ' + count + ' items' : '';
   }
 
   function show(index) {
     var list = visibleTiles();
     current = (index + list.length) % list.length;
     var data = list[current].querySelector('.tile-button').dataset;
-    image.src = data.full;
-    image.width = data.width;
-    image.height = data.height;
-    image.alt = data.alt;
-    caption.textContent = data.alt;
+    video.pause();
+    if (data.video) {
+      image.hidden = true;
+      image.removeAttribute('src');
+      video.hidden = false;
+      if (video.getAttribute('src') !== data.video) video.setAttribute('src', data.video);
+      video.setAttribute('aria-label', data.alt);
+    } else {
+      video.hidden = true;
+      video.removeAttribute('src');
+      video.load();
+      image.hidden = false;
+      image.src = data.full;
+      image.width = data.width;
+      image.height = data.height;
+      image.alt = data.alt;
+    }
+    caption.textContent = data.status ? data.status + ' — ' + data.alt : data.alt;
+    if (data.credit) caption.textContent += ' · ' + data.credit;
   }
 
   buttons.forEach(function (button) {
@@ -61,6 +76,7 @@
     if (event.key === 'ArrowRight') show(current + 1);
   });
   dialog.addEventListener('close', function () {
+    video.pause();
     if (opener) opener.focus();
   });
 

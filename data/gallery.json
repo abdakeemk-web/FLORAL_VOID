@@ -537,5 +537,149 @@
     "fullWidth": 693,
     "fullHeight": 1000,
     "hidden": true
+  },
+  {
+    "id": "wip-01",
+    "category": "wip",
+    "status": "In progress",
+    "alt": "Unfurred white foam fursuit head base with hollow eyes and muzzle, held by two hands over a work table",
+    "thumbWidth": 480,
+    "thumbHeight": 640,
+    "fullWidth": 1000,
+    "fullHeight": 1333,
+    "hidden": false
+  },
+  {
+    "id": "wip-02",
+    "category": "wip",
+    "status": "In progress",
+    "alt": "White paper fursuit head template with eye holes cut out, held up at a cluttered craft desk",
+    "thumbWidth": 480,
+    "thumbHeight": 852,
+    "fullWidth": 1000,
+    "fullHeight": 1775,
+    "hidden": false
+  },
+  {
+    "id": "wip-03",
+    "category": "wip",
+    "status": "In progress",
+    "alt": "Unfurred white foam fursuit head base with large upright ears, held above a keyboard",
+    "thumbWidth": 480,
+    "thumbHeight": 493,
+    "fullWidth": 1000,
+    "fullHeight": 1026,
+    "hidden": false
+  },
+  {
+    "id": "wip-04",
+    "category": "wip",
+    "status": "In progress",
+    "alt": "Work desk with a sheet of white upholstery foam, scissors, a marker and a ruler",
+    "thumbWidth": 480,
+    "thumbHeight": 270,
+    "fullWidth": 1000,
+    "fullHeight": 563,
+    "hidden": false
+  },
+  {
+    "id": "wip-05",
+    "category": "wip",
+    "status": "In progress",
+    "alt": "Unfurred white foam fursuit feet paws and leg pieces arranged on patterned fabric",
+    "thumbWidth": 480,
+    "thumbHeight": 446,
+    "fullWidth": 1000,
+    "fullHeight": 929,
+    "hidden": false
+  },
+  {
+    "id": "wip-06",
+    "category": "wip",
+    "status": "In progress",
+    "alt": "Person trying on an unfurred cream foam fursuit head base with large ears",
+    "thumbWidth": 480,
+    "thumbHeight": 479,
+    "fullWidth": 1000,
+    "fullHeight": 999,
+    "hidden": false
+  },
+  {
+    "id": "wip-07",
+    "category": "wip",
+    "status": "In progress",
+    "alt": "Person wearing an unfurred white foam fursuit lower body with digitigrade legs and paw feet",
+    "thumbWidth": 480,
+    "thumbHeight": 720,
+    "fullWidth": 1000,
+    "fullHeight": 1500,
+    "hidden": false
+  },
+  {
+    "id": "wip-08",
+    "category": "wip",
+    "status": "In progress",
+    "alt": "Close-up of unfurred white foam fursuit legs and paw feet on a wooden floor",
+    "thumbWidth": 480,
+    "thumbHeight": 676,
+    "fullWidth": 1000,
+    "fullHeight": 1407,
+    "hidden": false
+  },
+  {
+    "id": "wip-09",
+    "category": "wip",
+    "status": "In progress",
+    "alt": "White molded fursuit head base with fitted eye blanks on a desk in front of a sewing machine",
+    "thumbWidth": 480,
+    "thumbHeight": 360,
+    "fullWidth": 1000,
+    "fullHeight": 750,
+    "hidden": false
+  },
+  {
+    "id": "wip-10",
+    "category": "wip",
+    "status": "In progress",
+    "alt": "Clay sculpt of a bird-like fursuit head with white eye rings on a pink cutting mat",
+    "thumbWidth": 480,
+    "thumbHeight": 510,
+    "fullWidth": 1000,
+    "fullHeight": 1063,
+    "hidden": false
+  },
+  {
+    "id": "wip-11",
+    "category": "wip",
+    "status": "In progress",
+    "alt": "Hand holding a white ventilated fursuit head shell with fitted eye blanks in a workshop",
+    "thumbWidth": 480,
+    "thumbHeight": 640,
+    "fullWidth": 1000,
+    "fullHeight": 1333,
+    "hidden": false
+  },
+  {
+    "id": "wip-12",
+    "category": "wip",
+    "status": "In progress",
+    "alt": "Side view of a white molded fursuit head base with eye blank and open jaw on a work desk",
+    "thumbWidth": 480,
+    "thumbHeight": 360,
+    "fullWidth": 1000,
+    "fullHeight": 750,
+    "hidden": false
+  },
+  {
+    "id": "wip-video-01",
+    "type": "video",
+    "category": "wip",
+    "status": "In progress",
+    "video": "/videos/wip-video-01.mp4",
+    "width": 400,
+    "height": 720,
+    "alt": "Work in progress video from the workshop",
+    "credit": "Music: “As I Figure” by Kevin MacLeod (CC BY 3.0)",
+    "hidden": false
   }
 ]
