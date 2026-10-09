@@ -27,7 +27,7 @@ Premium creative-commission website for **FLORAL VOID** (artist: Kehinde; fursui
 | 8 | Contact / commission form + Web3Forms email | **Updated — awaiting user approval + access key** (Resend removed; form posts directly to Web3Forms; recipient abdakeemkehinde@gmail.com; Full Suit $7,000+ provisional; Furry gallery filter added) |
 | 9 | Terms | **Approved** (user, Oct 9 2026 — "well and good"; client to read it over) |
 | 10 | Performance / SEO / accessibility audit | **Delivered — awaiting user approval** (og share image added, fonts self-hosted, all contrast/label/heading checks pass) |
-| 11 | Final QA | Pending |
+| 11 | Final QA | **Delivered — awaiting user approval** (9 automated checks pass, zero issues; live visual pass done by user with nothing broken) |
 
 Reality check (user, Oct 7 2026): nothing had ever been delivered or pushed to GitHub before Stage 3. Stage 3 is the first real code.
 
@@ -215,6 +215,12 @@ Flags: 1.jpg is 299x252 (too small); 2, 12, 22 are wide strips; 6,10,25,29,33,39
     site-wide now.
   - Left for owner after deploy: Search Console submission. No ranking
     guarantees, per workflow rules.
+- Stage 11 (Oct 9 2026): final QA sweep, 9/9 checks pass, zero issues:
+  internal links + anchors resolve, all referenced assets exist, no stray
+  placeholders/lorem/TODOs, no duplicate ids, all JSON-LD parses, sitemap has
+  all 6 URLs, robots references sitemap, all ?service= links valid, no stale
+  provider/secret refs in dist. npm test 11/11. User confirmed live site shows
+  nothing broken.
 
 ## 13. Next recommended action
 Owner reviews the Terms page, then approves Stage 9. Next: gallery WIP/Furry details
