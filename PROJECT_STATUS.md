@@ -238,4 +238,42 @@ accessibility audit).
   parental-consent sentence, then removed the 18+ requirement entirely from
   section 1. The page now has NO age condition — anyone of any age may commission.
   This differs from the original site; confirm with the client. User confirmed
-  Oct 9 2026 ("yes") — no age limit stands.
+   Oct 9 2026 ("yes") — no age limit stands.
+- Fursona gallery follow-up (Oct 10 2026, user-supplied): 11 fursona ref sheets
+  added as gallery items furry-01…furry-11 (category furry, all visible).
+  Originals moved to source-images/fursona/fursona-01…11.jpg (not deployed);
+  WebP 480 (q90) / full (q92, capped 1000px) outputs as
+  public/images/portfolio/portfolio-furry-NN-*.webp. The misspelled
+  public/images/portfolio/forsona/ upload folder is gone. Filter renamed
+  Furry → Fursona Art (scripts/gallery.mjs label only; category id stays
+  furry; gallery title/meta now say "Fursona Art"). Alt text describes only
+  what is visible, including visible character labels (Kentaro, J, LYCOS,
+  KAIL, Shiny Bunny, JFET, Gargoyle). Verified: build ok, npm test 11/11,
+   67 visible tiles of 73 items, 11 furry tiles, all 22 WebP present.
+   (Video placement resolved Oct 10 2026 — see WIP videos follow-up below.)
+- Avatar gallery follow-up (Oct 10 2026, user-supplied): 4 Blender screenshots
+  added as gallery items avatar-01…avatar-04 (new category avatar, filter
+  label "Avatars"). Originals copied to source-images/avatar/ (not deployed);
+  deployed JPGs stay at public/images/portfolio/avatar/IMG-20261009-WA*.jpg
+  (24–200 KB; served as-is — no WebP conversion tooling in this env, so
+  scripts/gallery.mjs now supports an explicit `file` field per item).
+  Gallery title/meta/lead now mention avatars. Alt text describes only what
+  is visible (model colours, view, Blender — no service claims invented).
+   Verified: build ok, npm test 11/11, 71 visible tiles (Avatars 4), 4 tiles
+   reference the JPGs, dist carries the 4 files.
+- WIP videos follow-up (Oct 10 2026, user confirmed both are workshop clips):
+  video2.mp4 (23s, 360x642, 2.24 MB) + video3.mp4 (17s, 360x642, 1.66 MB)
+  added as gallery items wip-video-02/03 (category wip, "In progress" tag).
+  Tiles use preload="metadata" (first frame only); viewer preload="none"
+  (full file only on play) — no page-load data cost. No music mixed yet:
+  user picking from 4+4 Kevin MacLeod shortlist (CC BY 3.0); mix recipe is
+  the video-1 one (trim to duration, 0.5s fade-in, 2s fade-out, AAC 128k,
+  picture copied). After mixing, replace the MP4s and add the `credit`
+  field — no other gallery change needed.
+   Verified: build ok, npm test 11/11, 73 visible tiles (WIP 15 = 12 photos + 3 videos).
+- Music decision (Oct 10 2026, user: "leave it"): wip-video-02/03 keep their
+  original workshop audio — no music mixed. Both files contain a real AAC
+  audio track (verified by byte check: 1 vide + 1 soun/mp4a each); the earlier
+  "silent" claim was a bad shell-property read, corrected. Music (Cattails,
+  CC BY 3.0) can be added anytime later: replace the MP4s + add `credit` —
+  no gallery change needed.

@@ -4,7 +4,8 @@ export const categories = [
   { id: 'head', label: 'Heads' },
   { id: 'partial', label: 'Partials' },
   { id: 'full', label: 'Full Suits' },
-  { id: 'furry', label: 'Furry' },
+  { id: 'furry', label: 'Fursona Art' },
+  { id: 'avatar', label: 'Avatars' },
   { id: 'wip', label: 'Work in Progress' },
 ];
 
@@ -26,10 +27,16 @@ export function renderTiles(items) {
     .filter((item) => !item.hidden)
     .map((item) => {
       if (item.type === 'video') return renderVideoTile(item);
-      const base = `/images/portfolio/portfolio-${item.id}`;
       const alt = escapeAttr(item.alt);
       const tag = item.status ? `<span class="tile-tag">${escapeAttr(item.status)}</span>` : '';
       const statusAttr = item.status ? ` data-status="${escapeAttr(item.status)}"` : '';
+      if (item.file) {
+        return `<li class="tile" data-category="${item.category}">` +
+          `<button class="tile-button" type="button" data-full="${item.file}" data-width="${item.fullWidth}" data-height="${item.fullHeight}" data-alt="${alt}"${statusAttr}>` +
+          `<img src="${item.file}" width="${item.thumbWidth}" height="${item.thumbHeight}" loading="lazy" decoding="async" alt="${alt}">${tag}` +
+          `</button></li>`;
+      }
+      const base = `/images/portfolio/portfolio-${item.id}`;
       return `<li class="tile" data-category="${item.category}">` +
         `<button class="tile-button" type="button" data-full="${base}-1000.webp" data-width="${item.fullWidth}" data-height="${item.fullHeight}" data-alt="${alt}"${statusAttr}>` +
         `<img src="${base}-480.webp" width="${item.thumbWidth}" height="${item.thumbHeight}" loading="lazy" decoding="async" alt="${alt}">${tag}` +

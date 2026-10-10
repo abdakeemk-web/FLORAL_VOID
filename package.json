@@ -5,6 +5,7 @@
   "scripts": {
     "build": "node scripts/build.mjs",
     "dev": "node scripts/build.mjs && node scripts/dev-server.mjs",
-    "test": "node scripts/test-commission.mjs"
+    "test": "node scripts/test-commission.mjs",
+    "qa": "node scripts/qa-check.mjs"
   }
 }

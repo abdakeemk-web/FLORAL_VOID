@@ -681,5 +681,181 @@
     "alt": "Work in progress video from the workshop",
     "credit": "Music: “As I Figure” by Kevin MacLeod (CC BY 3.0)",
     "hidden": false
+  },
+  {
+    "id": "wip-video-02",
+    "type": "video",
+    "category": "wip",
+    "status": "In progress",
+    "video": "/videos/video2.mp4",
+    "width": 360,
+    "height": 642,
+    "alt": "Work in progress video from the workshop (23 seconds)",
+    "hidden": false
+  },
+  {
+    "id": "wip-video-03",
+    "type": "video",
+    "category": "wip",
+    "status": "In progress",
+    "video": "/videos/video3.mp4",
+    "width": 360,
+    "height": 642,
+    "alt": "Work in progress video from the workshop (17 seconds)",
+    "hidden": false
+  },
+  {
+    "id": "furry-01",
+    "category": "furry",
+    "alt": "Side profile headshot of a pink dragon-like fursona with spiked hair, heart markings and a teal eye on peach",
+    "thumbWidth": 480,
+    "thumbHeight": 424,
+    "fullWidth": 1000,
+    "fullHeight": 883,
+    "hidden": false
+  },
+  {
+    "id": "furry-02",
+    "category": "furry",
+    "alt": "Fursona reference sheet labeled Kentaro, a red black and white fox with front, back, head and paw views and a collar medallion",
+    "thumbWidth": 480,
+    "thumbHeight": 307,
+    "fullWidth": 822,
+    "fullHeight": 525,
+    "hidden": false
+  },
+  {
+    "id": "furry-03",
+    "category": "furry",
+    "alt": "Fursona reference sheet labeled J, a dark brown character in a purple hoodie with front, back and side views plus eye, mouth and bandana details",
+    "thumbWidth": 480,
+    "thumbHeight": 360,
+    "fullWidth": 1000,
+    "fullHeight": 750,
+    "hidden": false
+  },
+  {
+    "id": "furry-04",
+    "category": "furry",
+    "alt": "Front and back views of a brown, white and gray wolf fursona with blue eyes and a color palette on white",
+    "thumbWidth": 480,
+    "thumbHeight": 340,
+    "fullWidth": 1000,
+    "fullHeight": 709,
+    "hidden": false
+  },
+  {
+    "id": "furry-05",
+    "category": "furry",
+    "alt": "Fursona reference sheet of a black, white, magenta and blue canine with front, back, head and paw views plus color swatches on pink",
+    "thumbWidth": 480,
+    "thumbHeight": 242,
+    "fullWidth": 720,
+    "fullHeight": 363,
+    "hidden": false
+  },
+  {
+    "id": "furry-06",
+    "category": "furry",
+    "alt": "Fursona reference sheet labeled JFET, a red, cream and brown goat character with front, side and back views and a badge lanyard",
+    "thumbWidth": 480,
+    "thumbHeight": 321,
+    "fullWidth": 720,
+    "fullHeight": 481,
+    "hidden": false
+  },
+  {
+    "id": "furry-07",
+    "category": "furry",
+    "alt": "Full-body illustration labeled Gargoyle male hyena, a black, white and gray hyena with green eyes and color bars on black with a purple glow",
+    "thumbWidth": 480,
+    "thumbHeight": 720,
+    "fullWidth": 720,
+    "fullHeight": 1080,
+    "hidden": false
+  },
+  {
+    "id": "furry-08",
+    "category": "furry",
+    "alt": "Fursona reference sheet labeled LYCOS, a purple winged wolf-dragon with galaxy-pattern wings and tail, front and back on a starry background",
+    "thumbWidth": 480,
+    "thumbHeight": 194,
+    "fullWidth": 1000,
+    "fullHeight": 404,
+    "hidden": false
+  },
+  {
+    "id": "furry-09",
+    "category": "furry",
+    "alt": "Fursona reference sheet labeled KAIL, a black, gray and purple striped character in three poses with head, tail and paw details on a starry background",
+    "thumbWidth": 480,
+    "thumbHeight": 240,
+    "fullWidth": 1000,
+    "fullHeight": 499,
+    "hidden": false
+  },
+  {
+    "id": "furry-10",
+    "category": "furry",
+    "alt": "Fursona reference sheet labeled Shiny Bunny, a gray and white rabbit with cyan hair in a dark bodysuit with outfit and back views on blue",
+    "thumbWidth": 480,
+    "thumbHeight": 257,
+    "fullWidth": 1000,
+    "fullHeight": 536,
+    "hidden": false
+  },
+  {
+    "id": "furry-11",
+    "category": "furry",
+    "alt": "Fursona reference sheet of a cream and red fox in black tactical gear holding a rifle and pistol, front, back and close-up views",
+    "thumbWidth": 480,
+    "thumbHeight": 387,
+    "fullWidth": 1000,
+    "fullHeight": 806,
+    "hidden": false
+  },
+  {
+    "id": "avatar-01",
+    "category": "avatar",
+    "file": "/images/portfolio/avatar/IMG-20261009-WA0199.jpg",
+    "alt": "Back view of a black and white furry 3D avatar model with arms outstretched in Blender",
+    "thumbWidth": 480,
+    "thumbHeight": 252,
+    "fullWidth": 1600,
+    "fullHeight": 840,
+    "hidden": false
+  },
+  {
+    "id": "avatar-02",
+    "category": "avatar",
+    "file": "/images/portfolio/avatar/IMG-20261009-WA0189.jpg",
+    "alt": "Front view of a brown and white cat 3D avatar model with purple hair in Blender",
+    "thumbWidth": 480,
+    "thumbHeight": 251,
+    "fullWidth": 960,
+    "fullHeight": 503,
+    "hidden": false
+  },
+  {
+    "id": "avatar-03",
+    "category": "avatar",
+    "file": "/images/portfolio/avatar/IMG-20261009-WA0179.jpg",
+    "alt": "Front view of a white and black wolf 3D avatar model with a pink head marking in Blender",
+    "thumbWidth": 480,
+    "thumbHeight": 257,
+    "fullWidth": 956,
+    "fullHeight": 512,
+    "hidden": false
+  },
+  {
+    "id": "avatar-04",
+    "category": "avatar",
+    "file": "/images/portfolio/avatar/IMG-20261009-WA0172.jpg",
+    "alt": "Back view of a brown and black striped cat 3D avatar model with purple hair and a white back marking in Blender",
+    "thumbWidth": 480,
+    "thumbHeight": 249,
+    "fullWidth": 957,
+    "fullHeight": 497,
+    "hidden": false
   }
 ]
